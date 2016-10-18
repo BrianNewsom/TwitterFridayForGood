@@ -1,0 +1,63 @@
+<html>
+	<head>
+	<title>#FridayForGood November 11th</title>
+	<style>
+		body {
+			background-color: #1DA1F2;
+			text-align: center;
+			color: white;
+			font-family : "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  			font-size: inherit;
+  			font-style: normal;
+  			font-variant: normal;
+  			font-weight: normal;
+		}
+		h1#main-text {
+	    	font-size: 150px;
+		}
+
+		span#go-link {
+			color: rgb(224, 36, 94);
+		}
+	</style>
+	<script>
+		/* Shamelessly ripped from http://stackoverflow.com/questions/9335140/how-to-countdown-to-a-date */
+		var end = new Date('11/11/2016 8:00 AM');
+
+	    var _second = 1000;
+	    var _minute = _second * 60;
+	    var _hour = _minute * 60;
+	    var _day = _hour * 24;
+	    var timer;
+
+	    function showRemaining() {
+	        var now = new Date();
+	        var distance = end - now;
+	        if (distance < 0) {
+
+	            clearInterval(timer);
+	            document.getElementById('countdown').innerHTML = '0 days, 0 hours, 0 minutes, and 0 seconds';
+
+	            return;
+	        }
+	        var days = Math.floor(distance / _day);
+	        var hours = Math.floor((distance % _day) / _hour);
+	        var minutes = Math.floor((distance % _hour) / _minute);
+	        var seconds = Math.floor((distance % _minute) / _second);
+
+	        document.getElementById('countdown').innerHTML = days + ' days, ';
+	        document.getElementById('countdown').innerHTML += hours + ' hours, ';
+	        document.getElementById('countdown').innerHTML += minutes + ' minutes, and ';
+	        document.getElementById('countdown').innerHTML += seconds + ' seconds';
+	    }
+
+	    timer = setInterval(showRemaining, 1000);
+	</script>
+	</head>
+	<body>
+		<h1 id="main-text">#FridayForGood is November 11th</h1>
+		<img src="/assets/Twitter_Logo_White_On_Blue.png"></img>
+		<h2> That's only <span id="countdown">0</span> from now!</h2>
+		<h1>Check out the volunteer oppurtunities at <span id="go-link">go/FridayForGoodBoulder</span><h1>
+	</body>
+</html>
